@@ -1,0 +1,85 @@
+:root {
+  font-size: 62.5%;
+
+  --font-text: 'Roboto', sans serif;
+  --color-text: hsla(240, 6%, 21%, 1);
+  --button-color: hsla(240, 9%, 89%, 1);
+  --button-color-hover: hsla(194, 97%, 31%, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #ffffff;
+  font-family: var(--font-text);
+  display: grid;
+  height: 100vh;
+}
+
+main {
+  align-self: center;
+  justify-self: center;
+}
+
+#timer {
+  max-width: 32.1rem;
+  text-align: center;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(3rem, 3rem + 20vw, 12.6rem);
+  color: var(--color-text);
+  line-height: 14.8rem;
+  font-weight: 500;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
+}
+
+.buttons button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.buttons button svg {
+  width: clamp(2rem, 3rem + 4vw, 4.8rem);
+}
+
+#sounds {
+  max-width: 30.8rem;
+  margin-top: 3.2rem;
+  display: grid;
+}
+
+#sounds div {
+  display: flex;
+  justify-self: center;
+  gap: 3.2rem;
+}
+
+#sounds > div + div {
+  margin-top: 3.2rem;
+}
+
+#sounds .card {
+  max-width: 13.8rem;
+  text-align: center;
+  padding: 4.8rem;
+  background-color: var(--button-color);
+  border-radius: 2.4rem;
+}
+
+@media (min-width: 768px) {
+}
