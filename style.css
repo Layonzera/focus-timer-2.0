@@ -84,11 +84,11 @@ main {
   transition: all 0.2s;
 }
 
-#sounds .card:hover {
+#sounds .active {
   background: var(--button-color-hover);
 }
 
-#sounds .card:hover svg path {
+#sounds .active svg path {
   fill: #ffffff;
 }
 
