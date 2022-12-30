@@ -11,6 +11,8 @@
   --bg-card-color: hsla(240, 6%, 17%, 1);
 
   --color-fig: hsla(240, 6%, 21%, 1);
+
+  --color-slider: #323238;
 }
 
 * {
@@ -120,6 +122,28 @@ main {
 #sounds .active svg rect,
 #sounds .active svg circle {
   fill: #ffffff;
+}
+
+.vol {
+  appearance: none;
+  width: 9rem;
+  height: 0.4rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-slider);
+}
+
+.vol::-webkit-slider-thumb {
+  appearance: none;
+  background-color: var(--color-slider);
+
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 9999px;
+}
+
+.active .vol,
+.active .vol::-webkit-slider-thumb {
+  background-color: #ffffff;
 }
 
 .bg-change button {
