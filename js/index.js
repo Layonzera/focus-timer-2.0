@@ -13,7 +13,10 @@ const buttonSoundFireplace = document.querySelector('.sound-fireplace')
 const buttonBgLight = document.querySelector('.bg-light')
 const buttonBgDark = document.querySelector('.bg-dark')
 const bgContainer = document.querySelector('.container')
-const slider = document.querySelector('.slider')
+const inputForest = document.querySelector('#in-forest')
+const inputRain = document.querySelector('#in-rain')
+const inputCoffe = document.querySelector('#in-coffe')
+const inputFire = document.querySelector('#in-fire')
 let minutes = Number(minutesDisplay.textContent)
 let timeOut
 
@@ -74,7 +77,7 @@ function bgDark() {
     'hsla(240, 6%, 21%, 1)'
   )
 
-  document.documentElement.style.setProperty('--slider', '#323238')
+  document.documentElement.style.setProperty('--color-slider', '#323238')
 }
 
 function bgLight() {
@@ -99,7 +102,8 @@ function bgLight() {
     '--color-fig',
     'hsla(240, 7%, 78%, 1)'
   )
-  document.documentElement.style.setProperty('--slider', '#fff')
+
+  document.documentElement.style.setProperty('--color-slider', '#fff')
 }
 
 buttonPlay.addEventListener('click', function () {
@@ -190,6 +194,22 @@ buttonSoundFireplace.addEventListener('click', function () {
     buttonSoundFireplace.classList.remove('active')
     sound.audioFireplaceStop()
   }
+})
+
+inputForest.addEventListener('input', () => {
+  sound.buttonTree.volume = inputForest.value
+})
+
+inputRain.addEventListener('input', () => {
+  sound.buttonRain.volume = inputRain.value
+})
+
+inputCoffe.addEventListener('input', () => {
+  sound.buttonCoffeShop.volume = inputCoffe.value
+})
+
+inputFire.addEventListener('input', () => {
+  sound.buttonFireplace.volume = inputFire.value
 })
 
 buttonBgDark.addEventListener('click', function () {

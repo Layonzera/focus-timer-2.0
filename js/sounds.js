@@ -52,6 +52,10 @@ export default function () {
     audioTreeStop,
     audioRainStop,
     audioCoffeShopStop,
-    audioFireplaceStop
+    audioFireplaceStop,
+    buttonTree,
+    buttonRain,
+    buttonCoffeShop,
+    buttonFireplace
   }
 }
