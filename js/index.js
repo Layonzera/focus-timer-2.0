@@ -10,6 +10,10 @@ const buttonSoundTree = document.querySelector('.sound-tree')
 const buttonSoundRain = document.querySelector('.sound-rain')
 const buttonSoundCoffeShop = document.querySelector('.sound-coffe-shop')
 const buttonSoundFireplace = document.querySelector('.sound-fireplace')
+const buttonBgLight = document.querySelector('.bg-light')
+const buttonBgDark = document.querySelector('.bg-dark')
+const bgContainer = document.querySelector('.container')
+const slider = document.querySelector('.slider')
 let minutes = Number(minutesDisplay.textContent)
 let timeOut
 
@@ -45,6 +49,57 @@ function updateDisplay(minutes, seconds) {
 function resetTimer() {
   updateDisplay(minutes, 0)
   clearTimeout(timeOut)
+}
+
+function bgDark() {
+  bgContainer.style.backgroundColor = 'hsla(0, 0%, 100%, 1)'
+  document.documentElement.style.setProperty(
+    '--button-color',
+    'hsla(240, 9%, 89%, 1)'
+  )
+  document.documentElement.style.setProperty(
+    '--color-text',
+    'hsla(240, 6%, 21%, 1)'
+  )
+
+  document.documentElement.style.setProperty('--fill', 'hsla(240, 6%, 21%, 1)')
+
+  document.documentElement.style.setProperty(
+    '--button-color-hover',
+    'hsla(194, 97%, 31%, 1)'
+  )
+
+  document.documentElement.style.setProperty(
+    '--color-fig',
+    'hsla(240, 6%, 21%, 1)'
+  )
+
+  document.documentElement.style.setProperty('--slider', '#323238')
+}
+
+function bgLight() {
+  bgContainer.style.backgroundColor = 'hsla(240, 5%, 7%, 1)'
+  document.documentElement.style.setProperty(
+    '--button-color',
+    'hsla(240, 6%, 17%, 1)'
+  )
+  document.documentElement.style.setProperty(
+    '--color-text',
+    'hsla(0, 0%, 100%, 1)'
+  )
+
+  document.documentElement.style.setProperty('--fill', 'hsla(240, 7%, 78%, 1)')
+
+  document.documentElement.style.setProperty(
+    '--button-color-hover',
+    'hsla(195, 74%, 15%, 1)'
+  )
+
+  document.documentElement.style.setProperty(
+    '--color-fig',
+    'hsla(240, 7%, 78%, 1)'
+  )
+  document.documentElement.style.setProperty('--slider', '#fff')
 }
 
 buttonPlay.addEventListener('click', function () {
@@ -135,4 +190,16 @@ buttonSoundFireplace.addEventListener('click', function () {
     buttonSoundFireplace.classList.remove('active')
     sound.audioFireplaceStop()
   }
+})
+
+buttonBgDark.addEventListener('click', function () {
+  buttonBgLight.classList.remove('hide')
+  buttonBgDark.classList.add('hide')
+  bgLight()
+})
+
+buttonBgLight.addEventListener('click', function () {
+  buttonBgLight.classList.add('hide')
+  buttonBgDark.classList.remove('hide')
+  bgDark()
 })
