@@ -3,8 +3,14 @@
 
   --font-text: 'Roboto', sans serif;
   --color-text: hsla(240, 6%, 21%, 1);
+  --fill: hsla(240, 6%, 21%, 1);
   --button-color: hsla(240, 9%, 89%, 1);
   --button-color-hover: hsla(194, 97%, 31%, 1);
+
+  --bg-dark-color: hsla(240, 5%, 7%, 1);
+  --bg-card-color: hsla(240, 6%, 17%, 1);
+
+  --color-fig: hsla(240, 6%, 21%, 1);
 }
 
 * {
@@ -15,8 +21,15 @@
 
 body {
   font-size: 1.6rem;
-  background-color: #ffffff;
   font-family: var(--font-text);
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  background-color: #ffffff;
   display: grid;
   height: 100vh;
 }
@@ -57,6 +70,10 @@ main {
   width: clamp(2rem, 3rem + 4vw, 4.8rem);
 }
 
+.buttons button svg path {
+  fill: var(--fill);
+}
+
 #sounds {
   max-width: 30.8rem;
   margin: 3.2rem auto 0;
@@ -73,6 +90,13 @@ main {
   margin-top: 3.2rem;
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 #sounds .card {
   width: clamp(5rem, 5rem + 20vw, 13.8rem);
   height: clamp(8rem, 5rem + 21vw, 15.2rem);
@@ -84,12 +108,30 @@ main {
   transition: all 0.2s;
 }
 
+#sounds .card svg path {
+  fill: var(--color-fig);
+}
+
 #sounds .active {
   background: var(--button-color-hover);
 }
 
-#sounds .active svg path {
+#sounds .active svg path,
+#sounds .active svg rect,
+#sounds .active svg circle {
   fill: #ffffff;
+}
+
+.bg-change button {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 6.4rem;
+  right: 6.4rem;
+}
+
+.dark {
+  background-color: var(--bg-dark-color);
 }
 
 @media (min-width: 768px) {
